@@ -1,0 +1,14 @@
+{
+  "name": "otapp",
+  "version": "1.0.0",
+  "description": "first app trying to create",
+  "main": "index.js",
+  "scripts": {
+    "start":"electron ."
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^13.1.7"
+  }
+}
