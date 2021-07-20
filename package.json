@@ -4,11 +4,15 @@
   "description": "first app trying to create",
   "main": "index.js",
   "scripts": {
-    "start":"electron ."
+    "start": "electron ."
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "electron": "^13.1.7"
+  },
+  "dependencies": {
+    "ffmpeg": "^0.0.4",
+    "fluent-ffmpeg": "^2.1.2"
   }
 }
