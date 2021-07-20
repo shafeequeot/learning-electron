@@ -13,6 +13,9 @@
   },
   "dependencies": {
     "ffmpeg": "^0.0.4",
-    "fluent-ffmpeg": "^2.1.2"
+    "fluent-ffmpeg": "^2.1.2",
+    "sequelize": "^6.6.5",
+    "sqlite": "^4.0.23",
+    "sqlite3": "^5.0.2"
   }
 }

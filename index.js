@@ -1,15 +1,32 @@
-const { app, BrowserWindow, ipcMain } = require('electron')
-const ffmpeg = require('fluent-ffmpeg')
+const { app, BrowserWindow, ipcMain, ipcRenderer } = require('electron')
 
-   
+var sqlite3 = require('sqlite3').verbose();
+var db = new sqlite3.Database(`${__dirname}/sql/mySql.db`);
+
+let mainWindow;
   ipcMain.on('video:submit',()=>{
-    createTodoWidnow()
+   // createTodoWidnow()
+  
+    try {
+        
+            // open the database
+           
+              db.each("SELECT * FROM Name", function(err, row) {
+                
+                mainWindow.send('tableData',row)
+            })
+      //alert("seccess")
+  
+  
+      } catch (error) {
+         // alert("errrrrrrror")
+        console.error('Unable to connect to the database:', error);
+      }
     })
-
   
   app.on("ready",()=>{
       
-     const mainWindow =  new BrowserWindow ({
+      mainWindow =  new BrowserWindow ({
         webPreferences: {
             nodeIntegration: true,
             contextIsolation: false,

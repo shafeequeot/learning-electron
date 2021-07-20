@@ -8,3 +8,18 @@ document.querySelector('form').addEventListener('submit',(event)=>{
 ipcRenderer.send('video:submit')
 
   })
+
+  ipcRenderer.on('tableData',(event,table)=>{
+  
+  console.log(table.Name)
+  
+
+  document.querySelector("#table").innerHTML += table.Name + '<br/>'
+   })
+ 
+ 
+   
+   
+      
+   
+
